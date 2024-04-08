@@ -1,0 +1,38 @@
+ion-input {
+  margin-bottom: 10px;
+  border: 1px solid #FFFFFF;
+  border-radius: 4px;
+  background-color: white;
+  color: black;
+  placeholder-color: grey;
+}
+
+.logo {
+  max-height: 15%;
+  max-width: 20%;
+  display: block;
+  margin: auto;
+  margin-bottom: 20%;
+
+}
+
+.content {
+  width: 100%;
+  max-width: 400px;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.banner {
+  width: 10%;
+  max-width: 700px;
+  min-width: 150px;
+}
+
+ion-title {
+  filter: drop-shadow(0 0 2px #252525);
+}
+
+.button {
+  border-radius: 4px;
+}

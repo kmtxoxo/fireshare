@@ -1,0 +1,61 @@
+<ion-content color="dark">
+    <ul>
+        <li *ngFor="let message of messages" class="left clearfix">
+
+            <ion-grid *ngIf="message.from===userName" class="chatBubbleRight">
+                <ion-row class="messageInformation">
+                    <ion-col class="messageFrom">
+                        {{message.from}}
+                    </ion-col>
+                    <ion-col class="messageTime">
+                        <ion-icon name="time"></ion-icon>
+                        <p>{{message.time}}</p>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col>
+                        <p>{{message.content}}</p>
+                    </ion-col>
+                </ion-row>
+
+            </ion-grid>
+
+
+            <!-------------BREAK------------------------------->
+
+
+            <ion-grid *ngIf="message.from!=userName" class="chatBubbleLeft">
+                <ion-row>
+                    <ion-col class="primary-font">
+                        {{message.from}}
+                    </ion-col>
+                    <ion-col class="messageTime">
+                        <ion-icon name="time"></ion-icon>
+                        <p>{{message.time}}</p>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col>
+                        <p>{{message.content}}</p>
+                    </ion-col>
+                </ion-row>
+
+            </ion-grid>
+        </li>
+    </ul>
+</ion-content>
+
+<ion-footer>
+    <div style="width: 100%">
+        <ion-item>
+            <ion-input type="text" id="data" [(ngModel)]="messageContent"
+                       placeholder="Type your message here..."></ion-input>
+            <ion-icon name="send" color="primary" id="datasend" id="btn-chat"
+                      (click)="onSendClicked();messageContent=''"></ion-icon>
+
+        </ion-item>
+    </div>
+</ion-footer>
+

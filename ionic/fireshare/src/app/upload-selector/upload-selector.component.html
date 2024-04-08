@@ -1,0 +1,30 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+<div style="padding-top: 2%">
+    <div *ngIf="!hasSelection" class="flex_empty">
+        <button (click)="file.click()" class="arial" > <i class="fas fa-file-upload fa-3x"></i> <span>Select a File !</span></button>
+    </div>
+    <div *ngIf="hasSelection" class="flex">
+        <div class="image_background" id="img_bg">
+            <button (click)="file.click()"><i class="fas fa-file-upload fa-3x"></i></button>
+        </div>
+        <div class="text_content">
+            <div  class="names">
+                <div>Title:</div>
+                <ion-input [placeholder]="'Enter Title'" [value]="title" class="high_contrast"></ion-input>
+                <div>by:</div>
+                <ion-input [placeholder]="'Enter Artist'" [value]="artist" class="high_contrast"></ion-input>
+            </div>
+
+            <div class="sub">
+                <ion-text > {{fileName}} </ion-text>
+                <ion-text class="sub_right"> {{fileSize | number:(".2")}} MB </ion-text>
+            </div>
+        </div>
+        <div class="confirm_container">
+            <ion-button [disabled]="!hasSelection"  (click)="onAddTrack()" ><i class="fas fa-paper-plane">  </i>Add</ion-button>
+        </div>
+    </div>
+</div>
+
+<input type="file" accept="audio/mpeg" #file style="display:none" (change)="handleFileSelection($event.target.files)">

@@ -1,0 +1,29 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-title>{{title}}
+            <ion-button class="menu_button" (click)="exitRoom()">
+                <ion-icon name="exit"></ion-icon>
+            </ion-button>
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-tabs class="paddingTop">
+
+    <ion-tab-bar slot="bottom" color="primary">
+        <ion-tab-button tab="addTrack">
+            <ion-icon name="md-add"></ion-icon>
+            <ion-label>Add Track</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button tab="voting">
+            <ion-icon name="md-flame"></ion-icon>
+            <ion-label>Voting</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button tab="chat">
+            <ion-icon name="chatboxes"></ion-icon>
+            <ion-label>Chat</ion-label>
+        </ion-tab-button>
+    </ion-tab-bar>
+
+</ion-tabs>

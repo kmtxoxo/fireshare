@@ -1,0 +1,85 @@
+.currently_playing {
+  max-height: 200px;
+  height: 20%;
+}
+
+.footer {
+  background-color: black;
+}
+
+.albumCover {
+  width: 50%;
+}
+
+.track_display {
+  padding-top: 1%;
+  margin-top: 1%;
+  background-color: #1e2023;
+  filter: drop-shadow(4px 4px 0.4rem black);
+  border-radius: 5px;
+}
+
+.vertical-align-content {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  height: 100%;
+  margin: auto;
+}
+
+currently.currently_playing_container {
+  height: 25%;
+}
+
+.trackInformation {
+  display: inherit;
+  color: white;
+  font-weight: bold;
+}
+
+.forwardButton {
+  float: right;
+}
+
+.playButton {
+  float: left;
+  color: white;
+}
+
+.track {
+  background: grey;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  padding: 0.01em;
+}
+
+.favPlusCounter {
+  display: inherit;
+}
+
+.vote {
+  font-size: 24px;
+}
+
+.voting_container {
+  width: 100%;
+  max-width: 510px;
+  margin: auto;
+}
+
+.trackform {
+  width: 100%;
+}
+
+.sidebar {
+  float: left;
+  width: 20%;
+  height: 100%;
+  border-right: 1px solid black;
+}
+
+.main {
+  width: 70%;
+  margin: auto;
+  float: left;
+}

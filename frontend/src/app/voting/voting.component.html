@@ -1,0 +1,64 @@
+<button class="btn btn-secondary" (click)="onChatClicked()">Chat</button>
+
+<div *ngIf="mode==='host'">
+  <app-admin-control></app-admin-control>
+</div>
+
+<div class="voting_container">
+  <h2>Voting - Room:{{roomnumber}}</h2>
+  <div id="tracklist" class="container mt-3" style="width:100%;">
+
+
+    <div *ngFor="let track of tracks" class="d-flex bg-light" style="height:200px;">
+      <div class="col-sm-3 p-2"><img src="http://dalelyles.com/musicmp3s/no_cover.jpg"
+                                     style="width: auto;min-height: 140px; height:100%;"></div>
+      <div class="col-sm-5 p-2">
+        <h2 id="title">{{track.title}}</h2>
+        <h2 id="artist">{{track.artist}}</h2>
+        <h3 id="op">{{track.op}}</h3>
+      </div>
+
+      <div *ngIf="track.usersVoted.indexOf(username)==-1" class="col-sm-4 p-2 align-self-center text-right vote">
+        <span (click)="onVoteTrackClicked(track.title);track.usersVoted.push(username);"
+              class="glyphicon glyphicon-heart-empty"></span>
+        <div id="votecnt">{{track.votecnt}}</div>
+      </div>
+
+      <div *ngIf="track.usersVoted.indexOf(username)!=-1" class="col-sm-4 p-2 align-self-center text-right vote">
+        <span (click)="onUnvoteTrackClicked(track.title);track.usersVoted.splice(track.usersVoted.indexOf(username),1);"
+              class="glyphicon glyphicon-heart"></span>
+        <div id="votecnt">{{track.votecnt}}</div>
+      </div>
+
+    </div>
+
+
+    <p *ngIf="tracks.length<=0">No Tracks in Votinglist</p>
+  </div>
+  <br/><br/>
+
+  <div class="trackform">
+    <fieldset>
+      <legend>Track Information:</legend>
+      <div class="form-group">
+        <label for="InputTitle">Title</label>
+        <input type="text" class="form-control" [(ngModel)]="inputTrack.title" id="InputTitle"
+               placeholder="Enter Track Title">
+      </div>
+      <div class="form-group">
+        <label for="InputArtist">Artist</label>
+        <input required type="text" class="form-control" [(ngModel)]="inputTrack.artist" id="InputArtist"
+               placeholder="Enter Track Artist">
+      </div>
+
+      <div class="form-group">
+        <label for="InputURL">URL</label>
+        <input (change)="addTrackInfo()" type="text" class="form-control" id="InputURL" [(ngModel)]="inputTrack.source"
+               placeholder="Enter Track URL">
+      </div>
+
+      <button (click)="addTrackClicked();inputTrack.title='';inputTrack.artist=''" class="btn btn-primary">ADD Track
+      </button>
+    </fieldset>
+  </div>
+</div>

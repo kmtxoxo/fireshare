@@ -1,0 +1,16 @@
+<div class="flex">
+  <div class="image_background" [id]="name"></div>
+  <div class="text_content">
+    <div class="names">
+      <span class="high_contrast">{{title}}</span><span>by {{artist}}</span>
+    </div>
+
+    <div class="sub">
+      <ion-text > {{length}} </ion-text>
+      <ion-text class="sub_right"> Genre: {{genre}} </ion-text>
+    </div>
+  </div>
+  <div class="confirm_container">
+    <ion-button (click)="onAddTrack()" ><i class="fas fa-paper-plane">  </i>Add</ion-button>
+  </div>
+</div>

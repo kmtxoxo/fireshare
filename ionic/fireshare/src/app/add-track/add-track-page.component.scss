@@ -1,0 +1,137 @@
+.track {
+  background: grey;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  padding: 0.01em;
+}
+
+.vote {
+  font-size: 24px;
+}
+
+.voting_container {
+  width: 50%;
+  margin: auto;
+}
+
+.title {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+.trackform {
+  width: 100%;
+  max-width: 750px;
+  color: #222428;
+  margin: auto;
+  margin-top: 1%;
+}
+
+;
+#addButton {
+  display: block;
+  width: 50%;
+  min-width: 150px;
+  background: #800080;
+  margin: auto;
+  border-radius: 4px;
+  margin-top: 5%;
+}
+input[type="file"]{
+  display: none;
+}
+.uploadLabel{
+  border: 1px solid;
+  border-radius: 4px;
+  padding: 2px;
+}
+.uploadLabelContainer{
+  display: block;
+  margin: 5% auto auto;
+  text-align: center;
+}
+
+#uploadButton {
+  display: block;
+  width: 30%;
+  min-width: 150px;
+  background: #800080;
+  margin: auto;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  border-radius: 4px;
+}
+
+.segmentButton {
+  width: 25%;
+  margin: auto;
+  min-width: 130px;
+  border-radius: 4px;
+}
+
+.sidebar {
+  float: left;
+  width: 20%;
+  height: 100%;
+  border-right: 1px solid black;
+}
+
+.main {
+  width: 70%;
+  margin: auto;
+  float: left;
+}
+
+.label {
+  color: white;
+  font-size: 1.5rem;
+}
+
+.upload_container {
+  color: white;
+}
+
+.search_label{
+  color: white;
+}
+
+ion-row {
+  border-collapse: collapse;
+  cursor: pointer;
+  border-bottom:1pt solid dimgrey;
+}
+
+ion-row:hover{
+  opacity: 0.2;
+}
+
+.image {
+  height: 60px;
+  width: 90px;
+}
+.list_header {
+  margin-top: 5%;
+  font-size: 2rem;
+  color: #aaaaaa;
+}
+
+.segment-button-checked{
+  color:purple !important;
+}
+
+.outer-div
+{
+  display: table;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+.mid-div
+{
+  display: table-cell;
+  vertical-align: middle;
+}
+.center-div
+{
+  margin: 0 auto;
+}

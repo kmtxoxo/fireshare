@@ -1,0 +1,26 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-title>
+            <img class="banner" src="../../assets/FireShare_banner.png">
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content color="dark" padding>
+    <div class="center_container">
+        <div class="content">
+            <img class="logo" src="../../assets/FireShare_Logo.png">
+            <div>
+                <label> ENTER YOUR USERNAME</label>
+                <ion-input id="enterusername" type="text" required [(ngModel)]="username" placeholder="E.g: Julia"
+                           name="username"></ion-input>
+            </div>
+            <ion-button class="button" (click)="openModal()" expand="block" color="primary">Join Room
+            </ion-button>
+            <div>
+                <ion-button id="createRoom" class="button" expand="block" (click)="onCreateRoomClicked()" color="primary">Create Room
+                </ion-button>
+            </div>
+        </div>
+    </div>
+</ion-content>

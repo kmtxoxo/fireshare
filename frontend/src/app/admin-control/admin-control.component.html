@@ -1,0 +1,5 @@
+<button (click)="getMostVotedTrack();" class="btn btn-primary">play next Track</button>
+
+<div *ngIf="showSoundcloud" >
+  <app-soundcloud-widget  #soundcloudwidget (talk)="listenSoundcloudWidgetRendered($event)" ></app-soundcloud-widget>
+</div>

@@ -1,0 +1,8 @@
+<div style="margin-top:30px;">
+    <!--<div *ngIf="showSoundcloud === true" >-->
+    <app-soundcloud *ngIf="showSoundcloud === true" #soundcloudwidget [mostVotedTrack]="mostVotedTrack"
+                    (talk)="listenOnTrackFinished($event)" (pauseEvent)="listenOnTrackPlaying($event)"></app-soundcloud>
+    <app-youtube *ngIf="showYoutubePlayer === true" #youtubeplayer [mostVotedTrack]="mostVotedTrack"
+                 (videoChangeEvent)="listenOnTrackFinished($event)" (pauseEvent)="listenOnTrackPlaying($event)"></app-youtube>
+    <app-uploaded-media *ngIf="uploaded === true" #uploadedComponent (finishedEvent)="listenOnTrackFinished($event)" (pauseEvent)="listenOnTrackPlaying($event)" [mostVotedTrack]="mostVotedTrack"></app-uploaded-media>
+</div>

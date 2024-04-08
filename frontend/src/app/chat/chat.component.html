@@ -1,0 +1,32 @@
+<div class="chat_container panel panel-primary">
+  <div class="panel-heading" id="accordion">
+    <span class="glyphicon glyphicon-comment"></span> Chat
+  </div>
+  <div>
+    <div class="panel-body">
+      <ul id="chat" class="chat">
+
+        <li *ngFor="let message of messages"  class="left clearfix">
+         <div class="chat-body clearfix">
+                   <div class="header">
+                        <strong class="primary-font">{{message.from}}</strong><small class="pull-right text-muted">
+                           <span class="glyphicon glyphicon-time"></span>{{message.time}}</small>
+                   </div>
+                  <p>{{message.content}}
+                    </p>
+                 </div>
+              </li>
+
+      </ul>
+    </div>
+    <div class="panel-footer">
+      <div class="input-group">
+        <input id="data" type="text" [(ngModel)]="messageContent" class="form-control input-sm" placeholder="Type your message here..."/>
+        <span class="input-group-btn">
+            <button id="datasend" class="btn btn-primary btn-sm" id="btn-chat" (click)="onSendClicked();messageContent=''">Send</button>
+         </span>
+      </div>
+    </div>
+  </div>
+</div>
+<button  class="btn btn-secondary" (click)="onVoteClicked()">Voting</button>

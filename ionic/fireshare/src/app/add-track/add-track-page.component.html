@@ -1,0 +1,65 @@
+<ion-content color="dark">
+    <div class="outer-div">
+        <div class="mid-div">
+            <div class="trackform center-div">
+
+                <ion-toolbar class="segmentButton">
+                    <ion-segment (ionChange)="segmentChanged($event)">
+                        <ion-segment-button id="segmentButtonUrl" value="URL" checked> URL</ion-segment-button>
+                        <ion-segment-button id="segmentButtonMp3" value="MP3"> MP3</ion-segment-button>
+                    </ion-segment>
+                </ion-toolbar>
+
+                <fieldset>
+
+                    <div *ngIf="mode==='url'">
+                        <div class="form-group">
+                            <ion-label class="label">Search on Youtube</ion-label>
+                            <input type="text" class="form-control" (keyup)="youtubeSearch($event.target.value)"
+                                   id="InputSearch"
+                                   placeholder="Search">
+                        </div>
+
+                        <ng-container *ngIf="tempVideos">
+                            <div *ngFor="let video of tempVideos" (click)="addSearch(video)" style="width:100%">
+                                <ion-row>
+                                    <ion-col size="4"><img class="image" src='{{video.thumbnails.default}}'></ion-col>
+                                    <ion-col size="3"><p class="search_label">{{video.title}}</p></ion-col>
+                                </ion-row>
+                            </div>
+                        </ng-container>
+
+                        <div class="form-group">
+                            <ion-label class="label" for="InputTitle">Title</ion-label>
+                            <input type="text" class="form-control" [(ngModel)]="inputTrack.title" id="InputTitle"
+                                   placeholder="Enter Track Title">
+                        </div>
+                        <div class="form-group">
+                            <ion-label class="label" for="InputArtist">Artist</ion-label>
+                            <input required type="text" class="form-control" [(ngModel)]="inputTrack.artist"
+                                   id="InputArtist"
+                                   placeholder="Enter Track Artist">
+                        </div>
+
+                        <div class="form-group">
+                            <ion-label class="label" for="InputURL">URL</ion-label>
+                            <ion-input (ionChange)="addTrackInfo($event.target.value)" type="text" class="form-control"
+                                       id="InputURL"
+                                       [(ngModel)]="inputTrack.source"
+                                       placeholder="Enter Track URL"></ion-input>
+                            <ion-button id="addButton" (click)="addTrackClicked();init();">ADD Track</ion-button>
+                        </div>
+                    </div>
+
+                    <div *ngIf="mode==='mp3'" class="upload_container">
+                        <app-upload-selector (addTrack)="AddMp3Track($event)"></app-upload-selector>
+                        <p class="list_header">What others are listening to: </p>
+                        <app-file-display *ngFor="let item of knownFiles" [name]="item"
+                                          (addTrack)="AddMp3Track($event)"></app-file-display>
+                    </div>
+
+                </fieldset>
+            </div>
+        </div>
+    </div>
+</ion-content>
